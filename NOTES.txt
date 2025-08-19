@@ -1,0 +1,8 @@
+please remember this note
+
+/(event) folder is used to create some event or some announcement to user.. it expected to showing when
+         some event must announced
+
+/(tabs) set all bottom tab bar here, temporary (Dashboard, popular rank games, hall(post and user activity), message, profiles() )
+
+/

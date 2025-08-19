@@ -1,45 +1,112 @@
 import { Tabs } from 'expo-router';
-import React from 'react';
-import { Platform } from 'react-native';
-
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { Image } from 'react-native';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+    return (
+        <Tabs
+        screenOptions={{
+            tabBarLabelStyle: {
+                fontFamily: 'Poppins'
+            },
+            tabBarStyle: {
+                backgroundColor: '#fff',
+                borderTopColor: '#ccc',
+                height: 60,
+            },
+            tabBarInactiveTintColor: '#000',
+            tabBarActiveTintColor: '#000',
+        }}>
 
-  return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
-          },
-          default: {},
-        }),
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
-  );
+        {/* Rubah jadi jelajahi permainan */}
+            <Tabs.Screen
+            name= "Home"
+            options= {{
+                title: 'Home',
+                tabBarIcon: ({color, size}) => (
+                    <Image 
+                    source={require('../../assets/images/icon.png')}
+                    style={{
+                        width: size,
+                        height: size,
+                        tintColor: color
+                    }}
+                    />
+                ),
+               headerShown: false, 
+            }} />
+
+        {/* Rubah jadi daftar peringkat */}
+            <Tabs.Screen 
+            name= "popularity"
+            options= {{
+                title: 'Popularity',
+                tabBarIcon: () => (
+                    <Image
+                    source={require('../../assets/images/icon.png')}
+                    style={{
+                        width: 24,
+                        height: 24,
+                        
+                    }}
+                    />
+                ),
+                headerShown: false,
+            }}/>
+
+        {/* Rubah jadi Komunitas */}
+            <Tabs.Screen 
+            name= "Discover"
+            options= {{
+                title: 'Discover',
+                tabBarIcon: () => (
+                    <Image
+                    source={require('../../assets/images/icon.png')}
+                    style={{
+                        width: 24,
+                        height: 24,
+                        
+                    }}
+                    />
+                ),
+                headerShown: false,
+            }}/>
+
+        {/* Rubah jadi Informasi */}
+            <Tabs.Screen 
+            name= "Messages"
+            options= {{
+                title: 'Messages',
+                tabBarIcon: () => (
+                    <Image
+                    source={require('../../assets/images/icon.png')}
+                    style={{
+                        width: 24,
+                        height: 24,
+                        
+                    }}
+                    />
+                ),
+                headerShown: false,
+            }}/>
+
+        {/* Profiles Pengguna */}
+            <Tabs.Screen 
+            name= "Profiles"
+            options= {{
+                title: 'Profiles',
+                tabBarIcon: () => (
+                    <Image
+                    source={require('../../assets/images/icon.png')}
+                    style={{
+                        width: 24,
+                        height: 24,
+                        
+                    }}
+                    />
+                ),
+                headerShown: false,
+            }}/>
+
+        </Tabs>
+    )
 }

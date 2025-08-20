@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-const discover = () => {
+const Community = () => {
   return (
     <View>
       <Text>discover</Text>
@@ -9,4 +9,4 @@ const discover = () => {
   )
 }
 
-export default discover
+export default Community

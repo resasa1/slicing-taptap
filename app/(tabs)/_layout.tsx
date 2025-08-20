@@ -1,15 +1,17 @@
 import { Tabs } from 'expo-router';
 import { Image } from 'react-native';
+import { globalStyles } from '../../constants/Colors.js';
 
 export default function TabLayout() {
     return (
         <Tabs
         screenOptions={{
             tabBarLabelStyle: {
-                fontFamily: 'Poppins'
+                fontFamily: 'Poppins',
+                color: globalStyles.forText,
             },
             tabBarStyle: {
-                backgroundColor: '#fff',
+                backgroundColor: globalStyles.forBackground,
                 borderTopColor: '#ccc',
                 height: 60,
             },
@@ -19,16 +21,15 @@ export default function TabLayout() {
 
         {/* Rubah jadi jelajahi permainan */}
             <Tabs.Screen
-            name= "Home"
+            name= "Explore"
             options= {{
-                title: 'Home',
-                tabBarIcon: ({color, size}) => (
+                title: 'Jelajahi Permainan',
+                tabBarIcon: () => (
                     <Image 
                     source={require('../../assets/images/icon.png')}
                     style={{
-                        width: size,
-                        height: size,
-                        tintColor: color
+                        width: 24,
+                        height: 24,
                     }}
                     />
                 ),
@@ -37,9 +38,9 @@ export default function TabLayout() {
 
         {/* Rubah jadi daftar peringkat */}
             <Tabs.Screen 
-            name= "popularity"
+            name= "Ranklist"
             options= {{
-                title: 'Popularity',
+                title: 'Daftar Peringkat',
                 tabBarIcon: () => (
                     <Image
                     source={require('../../assets/images/icon.png')}
@@ -55,9 +56,9 @@ export default function TabLayout() {
 
         {/* Rubah jadi Komunitas */}
             <Tabs.Screen 
-            name= "Discover"
+            name= "Community"
             options= {{
-                title: 'Discover',
+                title: 'Komunitas',
                 tabBarIcon: () => (
                     <Image
                     source={require('../../assets/images/icon.png')}
@@ -73,9 +74,9 @@ export default function TabLayout() {
 
         {/* Rubah jadi Informasi */}
             <Tabs.Screen 
-            name= "Messages"
+            name= "Information"
             options= {{
-                title: 'Messages',
+                title: 'Informasi',
                 tabBarIcon: () => (
                     <Image
                     source={require('../../assets/images/icon.png')}

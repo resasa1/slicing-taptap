@@ -1,12 +1,12 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-const popularity = () => {
+const Ranklist = () => {
   return (
     <View>
-      <Text>popularity</Text>
+      <Text>Daftar Peringkat</Text>
     </View>
   )
 }
 
-export default popularity
+export default Ranklist

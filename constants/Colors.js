@@ -7,4 +7,5 @@ export const globalStyles = {
     forBackground: '#000000',
     forInactive: '#e9ecef',
     forText: '#ffffff',
+    tabBackground: '#191919'
 }

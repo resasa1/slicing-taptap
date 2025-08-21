@@ -11,9 +11,9 @@ export default function TabLayout() {
                 color: globalStyles.forText,
             },
             tabBarStyle: {
-                backgroundColor: globalStyles.forBackground,
-                borderTopColor: '#ccc',
-                height: 60,
+                backgroundColor: globalStyles.tabBackground,
+                borderTopColor: globalStyles.forBackground,
+                height: 80,
             },
             tabBarInactiveTintColor: '#000',
             tabBarActiveTintColor: '#000',
@@ -43,7 +43,7 @@ export default function TabLayout() {
                 title: 'Daftar Peringkat',
                 tabBarIcon: () => (
                     <Image
-                    source={require('../../assets/images/icon.png')}
+                    source={require('../../assets/icons/ranklistW.png')}
                     style={{
                         width: 24,
                         height: 24,
@@ -79,7 +79,7 @@ export default function TabLayout() {
                 title: 'Informasi',
                 tabBarIcon: () => (
                     <Image
-                    source={require('../../assets/images/icon.png')}
+                    source={require('../../assets/icons/infoW.png')}
                     style={{
                         width: 24,
                         height: 24,
